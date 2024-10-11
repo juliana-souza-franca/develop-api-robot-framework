@@ -1,0 +1,8 @@
+
+URL: https://develop.qacoders.dev.br/
+ENDPOINT_LOGIN_ADMIN: api/login/
+ENDPOINT_USER:  api/user/
+ENDPOINT_PASSWORD_USER: api/user/password/
+ENDPOINT_COMPANY: api/company/
+ENDPOINT_ADDRESS_COMPANY: api/company/address/
+ENDPOINT_CLIENT: api/client/
