@@ -33,7 +33,7 @@ jobs:
       - name: Run Robot Framework tests
         run: |
           mkdir -p results
-          robot --outputdir results tests/features/
+          robot --outputdir results tests/features/develop.robot
 
       - name: Test Report
         uses: actions/upload-artifact@v4
