@@ -29,18 +29,22 @@ jobs:
           pip install faker
           pip install robotframework-jsonlibrary
           pip install pyyaml
+      
+      - name: List files in tests/features
+        run: |
+          ls -l tests/features
 
       - name: Run Robot Framework tests
         run: |
           mkdir -p results
-          robot --outputdir results tests/features/develop.robot
+          robot --outputdir results tests/features/
 
       - name: Test Report
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
           path: results/
-          
+
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
