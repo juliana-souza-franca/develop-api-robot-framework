@@ -1,136 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.0 on win32)" generated="2024-10-01T14:19:42.142137" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.12.0 on win32)" generated="2024-10-14T10:30:02.526251" rpa="false" schemaversion="5">
 <suite id="s1" name="Develop" source="C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\tests\fetuares\develop.robot">
-<test id="s1-t1" name="CT012- Cadastrar um cliente" line="77">
-<kw name="Acessar a pagina de cadastro de cliente" owner="kw_register_client">
+<test id="s1-t1" name="CT014- Atualizar os dados do cliente" line="91">
+<kw name="Acessar a pagina da atualizacao do cliente" owner="kw_update_client">
 <kw name="acessar a pagina" owner="header">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.091127" level="INFO">${HEADERS} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<msg time="2024-10-14T10:30:11.092341" level="INFO">${HEADERS} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
 <var>${HEADERS}</var>
 <arg>accept=application/json</arg>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.091127" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:11.091343" elapsed="0.000998"/>
 </kw>
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:47.097128" level="INFO">Creating Session using : alias=auth, url=https://develop.qacoders.dev.br/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-10-14T10:30:11.099340" level="INFO">Creating Session using : alias=auth, url=https://develop.qacoders.dev.br/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>alias=auth</arg>
 <arg>url=${URL}</arg>
 <arg>headers=${HEADERS}</arg>
 <arg>disable_warnings=${True}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-10-01T14:19:47.092127" elapsed="0.006001"/>
+<status status="PASS" start="2024-10-14T10:30:11.092341" elapsed="0.008000"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:47.087128" elapsed="0.011000"/>
+<status status="PASS" start="2024-10-14T10:30:11.081340" elapsed="0.019001"/>
 </kw>
 <kw name="Digitar os campos 'mail' e 'password'" owner="kw_login_admin">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.101128" level="INFO">${BODY} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<msg time="2024-10-14T10:30:11.102340" level="INFO">${BODY} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
 <var>${BODY}</var>
 <arg>mail=${EMAIL_ADMIN}</arg>
 <arg>password=${SENHA_ADMIN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.100127" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:11.101340" elapsed="0.001000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:47.813724" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:11.815895" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
  path_url=/api/login/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
  body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
  </msg>
-<msg time="2024-10-01T14:19:47.814699" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:11.816895" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:45 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"534-9slNu0b2bAlKBv5Qu/vBkTAF4QA"', 'Content-Encoding': 'gzip'} 
- body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NSwiZXhwIjoxNzI3ODg5NTg1fQ.MJGkIY6MRM0dFNAs0lJyP4tFdyW61b4ewLLLiJJI7KE"} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:08 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"534-Yr6LNVTxasMzur+cwy0dLxu4zYI"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOCwiZXhwIjoxNzI4OTk5MDA4fQ.70jD6touMeLa_stq8m6FXOaAbAO8i3sRcweGcn3tEvI"} 
  </msg>
-<msg time="2024-10-01T14:19:47.814699" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-14T10:30:11.816895" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>alias=auth</arg>
 <arg>url=${ENDPOINT_LOGIN_ADMIN}</arg>
 <arg>json=${BODY}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.102127" elapsed="0.712572"/>
+<status status="PASS" start="2024-10-14T10:30:11.103340" elapsed="0.713555"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.815699" elapsed="0.002001"/>
+<status status="PASS" start="2024-10-14T10:30:11.817894" elapsed="0.016000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.817700" elapsed="0.004943"/>
+<status status="PASS" start="2024-10-14T10:30:11.834894" elapsed="0.005000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.828644" level="INFO">${response_json} = {'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$...</msg>
+<msg time="2024-10-14T10:30:11.845405" level="INFO">${response_json} = {'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$...</msg>
 <arg>${response_json}</arg>
 <arg>${response.json()}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.823644" elapsed="0.005000"/>
+<status status="PASS" start="2024-10-14T10:30:11.840895" elapsed="0.004510"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.829644" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NSwiZXhwIjoxNzI3ODg5NTg1fQ.MJGkIY6MRM0dFNAs0lJyP4tFdyW61b4ewLLLiJJI7KE'}</msg>
+<msg time="2024-10-14T10:30:11.846406" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOCwiZXhwIjoxNzI4OTk5MDA4fQ.70jD6touMeLa_stq8m6FXOaAbAO8i3sRcweGcn3tEvI'}</msg>
 <arg>${response_json}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.828644" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:11.845405" elapsed="0.001001"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.833642" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<msg time="2024-10-14T10:30:11.850405" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
 <arg>${token}</arg>
 <arg>${response_json['token']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.830643" elapsed="0.002999"/>
+<status status="PASS" start="2024-10-14T10:30:11.847406" elapsed="0.004000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${token}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.834644" elapsed="0.002998"/>
+<status status="PASS" start="2024-10-14T10:30:11.851406" elapsed="0.002999"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.839642" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<msg time="2024-10-14T10:30:11.856405" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
 <var>${HEADERS}</var>
 <arg>Authorization=${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.838644" elapsed="0.000998"/>
+<status status="PASS" start="2024-10-14T10:30:11.855406" elapsed="0.000999"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.841642" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<msg time="2024-10-14T10:30:11.859406" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
 <arg>${HEADERS_TOKEN}</arg>
 <arg>${HEADERS}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.839642" elapsed="0.004000"/>
+<status status="PASS" start="2024-10-14T10:30:11.857406" elapsed="0.002000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.847643" level="INFO">${password} = $2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri</msg>
+<msg time="2024-10-14T10:30:11.863406" level="INFO">${password} = $2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri</msg>
 <arg>${password}</arg>
 <arg>${response_json['user']['password']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.844644" elapsed="0.004000"/>
+<status status="PASS" start="2024-10-14T10:30:11.860406" elapsed="0.004000"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.851643" level="INFO">Argument types are:
+<msg time="2024-10-14T10:30:11.866406" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.849656" elapsed="0.001987"/>
+<status status="PASS" start="2024-10-14T10:30:11.865406" elapsed="0.001000"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:47.099127" elapsed="0.752516"/>
+<status status="PASS" start="2024-10-14T10:30:11.100341" elapsed="0.767066"/>
 </kw>
 <kw name="Cadastrar o usuário" owner="kw_register_user">
 <kw name="Get Fake Account" owner="account">
-<msg time="2024-10-01T14:19:47.855644" level="INFO">${account} = {'name': 'Maria Laura Gomes', 'email': 'mathiasribeiro@example.com', 'cpf': '89367514255'}</msg>
+<msg time="2024-10-14T10:30:11.869405" level="INFO">${account} = {'name': 'Marcos Vinicius Pacheco', 'email': 'natalia62@example.org', 'cpf': '45932107804'}</msg>
 <var>${account}</var>
-<status status="PASS" start="2024-10-01T14:19:47.854644" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:11.868405" elapsed="0.001000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${account}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.856644" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:11.871405" elapsed="0.001001"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:47.862643" level="INFO">${BODY_USER} = {'fullName': 'Maria Laura Gomes', 'mail': 'mathiasribeiro@example.com', 'accessProfile': 'ADMIN', 'cpf': '89367514255', 'password': '12345@Test', 'confirmPassword': '12345@Test'}</msg>
+<msg time="2024-10-14T10:30:11.876915" level="INFO">${BODY_USER} = {'fullName': 'Marcos Vinicius Pacheco', 'mail': 'natalia62@example.org', 'accessProfile': 'ADMIN', 'cpf': '45932107804', 'password': '12345@Test', 'confirmPassword': '12345@Test'}</msg>
 <var>${BODY_USER}</var>
 <arg>fullName=${account}[name]</arg>
 <arg>mail=${account}[email]</arg>
@@ -139,236 +139,236 @@
 <arg>password=${SENHA}</arg>
 <arg>confirmPassword=${SENHA}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.858643" elapsed="0.004000"/>
+<status status="PASS" start="2024-10-14T10:30:11.872406" elapsed="0.004509"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${BODY_USER}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.862643" elapsed="0.007001"/>
+<status status="PASS" start="2024-10-14T10:30:11.876915" elapsed="0.002001"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:48.113407" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/user/ 
+<msg time="2024-10-14T10:30:12.119916" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/user/ 
  path_url=/api/user/ 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NSwiZXhwIjoxNzI3ODg5NTg1fQ.MJGkIY6MRM0dFNAs0lJyP4tFdyW61b4ewLLLiJJI7KE', 'Content-Length': '178'} 
- body=b'{"fullName": "Maria Laura Gomes", "mail": "mathiasribeiro@example.com", "accessProfile": "ADMIN", "cpf": "89367514255", "password": "12345@Test", "confirmPassword": "12345@Test"}' 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOCwiZXhwIjoxNzI4OTk5MDA4fQ.70jD6touMeLa_stq8m6FXOaAbAO8i3sRcweGcn3tEvI', 'Content-Length': '179'} 
+ body=b'{"fullName": "Marcos Vinicius Pacheco", "mail": "natalia62@example.org", "accessProfile": "ADMIN", "cpf": "45932107804", "password": "12345@Test", "confirmPassword": "12345@Test"}' 
  </msg>
-<msg time="2024-10-01T14:19:48.113407" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/user/ 
+<msg time="2024-10-14T10:30:12.119916" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/user/ 
  status=201, reason=Created 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:46 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '470', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"1d6-cYZP1epsMnI1v8GQBMQ1GR1c0z0"'} 
- body={"msg":"Olá Maria Laura Gomes, cadastro realizado com sucesso.","user":{"_id":"66fc2f32b8d32c9e73da609a","fullName":"Maria Laura Gomes","mail":"mathiasribeiro@example.com","accessProfile":"ADMIN","cpf":"89367514255","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"terça-feira, 01/10/2024, 14:19:46 BRT","registrationNumber":"QaCoders-326","_id":"66fc2f32b8d32c9e73da609b"}],"__v":0}} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:08 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '478', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"1de-79a+6Jm2o03Hl2yfvm3m0s0y9WA"'} 
+ body={"msg":"Olá Marcos Vinicius Pacheco, cadastro realizado com sucesso.","user":{"_id":"670d1ce0b8d32c9e73fa045b","fullName":"Marcos Vinicius Pacheco","mail":"natalia62@example.org","accessProfile":"ADMIN","cpf":"45932107804","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"segunda-feira, 14/10/2024, 10:30:08 BRT","registrationNumber":"QaCoders-763","_id":"670d1ce0b8d32c9e73fa045c"}],"__v":0}} 
  </msg>
-<msg time="2024-10-01T14:19:48.114410" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-10-14T10:30:12.119916" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>alias=auth</arg>
 <arg>url=${ENDPOINT_USER}</arg>
 <arg>json=${BODY_USER}</arg>
 <arg>headers=${HEADERS_TOKEN}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:47.869644" elapsed="0.244766"/>
+<status status="PASS" start="2024-10-14T10:30:11.879915" elapsed="0.240001"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.115434" elapsed="0.002972"/>
+<status status="PASS" start="2024-10-14T10:30:12.120916" elapsed="0.001999"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.119406" elapsed="0.003512"/>
+<status status="PASS" start="2024-10-14T10:30:12.123915" elapsed="0.003000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.129918" level="INFO">${response_user} = {'msg': 'Olá Maria Laura Gomes, cadastro realizado com sucesso.', 'user': {'_id': '66fc2f32b8d32c9e73da609a', 'fullName': 'Maria Laura Gomes', 'mail': 'mathiasribeiro@example.com', 'accessProfile': 'A...</msg>
+<msg time="2024-10-14T10:30:12.131915" level="INFO">${response_user} = {'msg': 'Olá Marcos Vinicius Pacheco, cadastro realizado com sucesso.', 'user': {'_id': '670d1ce0b8d32c9e73fa045b', 'fullName': 'Marcos Vinicius Pacheco', 'mail': 'natalia62@example.org', 'accessProfi...</msg>
 <arg>${response_user}</arg>
 <arg>${response.json()}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.123918" elapsed="0.007001"/>
+<status status="PASS" start="2024-10-14T10:30:12.127916" elapsed="0.003999"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.132918" level="INFO">{'msg': 'Olá Maria Laura Gomes, cadastro realizado com sucesso.', 'user': {'_id': '66fc2f32b8d32c9e73da609a', 'fullName': 'Maria Laura Gomes', 'mail': 'mathiasribeiro@example.com', 'accessProfile': 'ADMIN', 'cpf': '89367514255', 'status': True, 'audit': [{'registeredBy': {'userId': '66db5e9eb6224843903c44cb', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'terça-feira, 01/10/2024, 14:19:46 BRT', 'registrationNumber': 'QaCoders-326', '_id': '66fc2f32b8d32c9e73da609b'}], '__v': 0}}</msg>
+<msg time="2024-10-14T10:30:12.133915" level="INFO">{'msg': 'Olá Marcos Vinicius Pacheco, cadastro realizado com sucesso.', 'user': {'_id': '670d1ce0b8d32c9e73fa045b', 'fullName': 'Marcos Vinicius Pacheco', 'mail': 'natalia62@example.org', 'accessProfile': 'ADMIN', 'cpf': '45932107804', 'status': True, 'audit': [{'registeredBy': {'userId': '66db5e9eb6224843903c44cb', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'segunda-feira, 14/10/2024, 10:30:08 BRT', 'registrationNumber': 'QaCoders-763', '_id': '670d1ce0b8d32c9e73fa045c'}], '__v': 0}}</msg>
 <arg>${response_user}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.131919" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:12.132916" elapsed="0.000999"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.134917" level="INFO">Argument types are:
+<msg time="2024-10-14T10:30:12.136915" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.132918" elapsed="0.001999"/>
+<status status="PASS" start="2024-10-14T10:30:12.133915" elapsed="0.003000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.137919" level="INFO">${USER_MAIL} = mathiasribeiro@example.com</msg>
+<msg time="2024-10-14T10:30:12.140916" level="INFO">${USER_MAIL} = natalia62@example.org</msg>
 <arg>${USER_MAIL}</arg>
 <arg>${response.json()['user']['mail']}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.134917" elapsed="0.003002"/>
+<status status="PASS" start="2024-10-14T10:30:12.137916" elapsed="0.004000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${USER_MAIL}</arg>
 <arg>${response.json()['user']['mail']}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.137919" elapsed="0.001998"/>
+<status status="PASS" start="2024-10-14T10:30:12.141916" elapsed="0.002000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.143918" level="INFO">${USER_ID} = 66fc2f32b8d32c9e73da609a</msg>
+<msg time="2024-10-14T10:30:12.149916" level="INFO">${USER_ID} = 670d1ce0b8d32c9e73fa045b</msg>
 <arg>${USER_ID}</arg>
 <arg>${response.json()['user']['_id']}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.139917" elapsed="0.004001"/>
+<status status="PASS" start="2024-10-14T10:30:12.144916" elapsed="0.005000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${USER_ID}</arg>
 <arg>${response.json()['user']['_id']}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.144919" elapsed="0.001999"/>
+<status status="PASS" start="2024-10-14T10:30:12.150915" elapsed="0.002001"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.148917" level="INFO">66fc2f32b8d32c9e73da609a</msg>
+<msg time="2024-10-14T10:30:12.153915" level="INFO">670d1ce0b8d32c9e73fa045b</msg>
 <arg>${USER_ID}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.147919" elapsed="0.000998"/>
+<status status="PASS" start="2024-10-14T10:30:12.152916" elapsed="0.000999"/>
 </kw>
 <return>
 <value>${response_user}</value>
 <value>${account}</value>
-<status status="PASS" start="2024-10-01T14:19:48.149917" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:12.153915" elapsed="0.000000"/>
 </return>
-<status status="PASS" start="2024-10-01T14:19:47.853643" elapsed="0.297275"/>
+<status status="PASS" start="2024-10-14T10:30:11.867407" elapsed="0.286508"/>
 </kw>
 <kw name="Digitar os campos de login usuario" owner="kw_login_user">
 <kw name="Acessar a pagina do usuario" owner="kw_register_user">
 <kw name="acessar a pagina" owner="header">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.155918" level="INFO">${HEADERS} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
+<msg time="2024-10-14T10:30:12.167915" level="INFO">${HEADERS} = {'accept': 'application/json', 'Content-Type': 'application/json'}</msg>
 <var>${HEADERS}</var>
 <arg>accept=application/json</arg>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.154917" elapsed="0.002002"/>
+<status status="PASS" start="2024-10-14T10:30:12.166917" elapsed="0.000998"/>
 </kw>
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:48.157918" level="INFO">Creating Session using : alias=auth, url=https://develop.qacoders.dev.br/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-10-14T10:30:12.169916" level="INFO">Creating Session using : alias=auth, url=https://develop.qacoders.dev.br/, headers={'accept': 'application/json', 'Content-Type': 'application/json'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>alias=auth</arg>
 <arg>url=${URL}</arg>
 <arg>headers=${HEADERS}</arg>
 <arg>disable_warnings=${True}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-10-01T14:19:48.156919" elapsed="0.002998"/>
+<status status="PASS" start="2024-10-14T10:30:12.167915" elapsed="0.002001"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:48.153917" elapsed="0.007000"/>
+<status status="PASS" start="2024-10-14T10:30:12.161916" elapsed="0.008000"/>
 </kw>
 <kw name="Digitar os campos 'mail' e 'password'" owner="kw_login_admin">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:48.164918" level="INFO">${BODY} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
+<msg time="2024-10-14T10:30:12.172916" level="INFO">${BODY} = {'mail': 'sysadmin@qacoders.com', 'password': '1234@Test'}</msg>
 <var>${BODY}</var>
 <arg>mail=${EMAIL_ADMIN}</arg>
 <arg>password=${SENHA_ADMIN}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.162918" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:12.171916" elapsed="0.001000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:48.979470" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:12.768916" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
  path_url=/api/login/ 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '58'} 
  body=b'{"mail": "sysadmin@qacoders.com", "password": "1234@Test"}' 
  </msg>
-<msg time="2024-10-01T14:19:48.980470" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:12.769915" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"534-oMSU4vcDWsvZyDuF1F/W5Wk6Meg"', 'Content-Encoding': 'gzip'} 
- body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NywiZXhwIjoxNzI3ODg5NTg3fQ.X5jOD8tmWYOFyVnEyHaoUTlpKDzbszFhUYSai7nBWQg"} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"534-+JZKOX7InW2Ykx9HP5w86laHxBQ"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!","user":{"_id":"66db5e9eb6224843903c44cb","fullName":"Qa-Coders-SYSADMIN","mail":"sysadmin@qacoders.com","password":"$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri","accessProfile":"SYSADMIN","cpf":"11111111111","status":true,"audit":[{"registeredBy":{"userId":"111111111111111111","userLogin":"sysadmin@qacoders.com"},"registrationDate":"sexta-feira, 06/09/2024, 16:57:18 BRT","registrationNumber":"01","companyId":"Qa.Coders","_id":"66db5e9eb6224843903c44cc"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.YxZKnRS9BjxvRUOOcO_tv5ZJCOeo-MXL3oXq52rmfoA"} 
  </msg>
-<msg time="2024-10-01T14:19:48.981470" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-14T10:30:12.769915" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>alias=auth</arg>
 <arg>url=${ENDPOINT_LOGIN_ADMIN}</arg>
 <arg>json=${BODY}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.167917" elapsed="0.813553"/>
+<status status="PASS" start="2024-10-14T10:30:12.173915" elapsed="0.596000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.982470" elapsed="0.007000"/>
+<status status="PASS" start="2024-10-14T10:30:12.770915" elapsed="0.002000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:48.990471" elapsed="0.014000"/>
+<status status="PASS" start="2024-10-14T10:30:12.773914" elapsed="0.004001"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.006469" level="INFO">${response_json} = {'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$...</msg>
+<msg time="2024-10-14T10:30:12.780915" level="INFO">${response_json} = {'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$...</msg>
 <arg>${response_json}</arg>
 <arg>${response.json()}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.005470" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:12.778915" elapsed="0.003000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.007469" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NywiZXhwIjoxNzI3ODg5NTg3fQ.X5jOD8tmWYOFyVnEyHaoUTlpKDzbszFhUYSai7nBWQg'}</msg>
+<msg time="2024-10-14T10:30:12.782914" level="INFO">{'msg': 'Olá Qa-Coders-SYSADMIN, autenticação autorizada com sucesso!', 'user': {'_id': '66db5e9eb6224843903c44cb', 'fullName': 'Qa-Coders-SYSADMIN', 'mail': 'sysadmin@qacoders.com', 'password': '$2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri', 'accessProfile': 'SYSADMIN', 'cpf': '11111111111', 'status': True, 'audit': [{'registeredBy': {'userId': '111111111111111111', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'sexta-feira, 06/09/2024, 16:57:18 BRT', 'registrationNumber': '01', 'companyId': 'Qa.Coders', '_id': '66db5e9eb6224843903c44cc'}], '__v': 0}, 'token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.YxZKnRS9BjxvRUOOcO_tv5ZJCOeo-MXL3oXq52rmfoA'}</msg>
 <arg>${response_json}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.007469" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:12.781915" elapsed="0.000999"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.010469" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
+<msg time="2024-10-14T10:30:12.784915" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGd...</msg>
 <arg>${token}</arg>
 <arg>${response_json['token']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.008469" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:12.783915" elapsed="0.002000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${token}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.011470" elapsed="0.003999"/>
+<status status="PASS" start="2024-10-14T10:30:12.785915" elapsed="0.002999"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.016470" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<msg time="2024-10-14T10:30:12.789915" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
 <var>${HEADERS}</var>
 <arg>Authorization=${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.015469" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:12.788914" elapsed="0.001001"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.017471" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
+<msg time="2024-10-14T10:30:12.790915" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6...</msg>
 <arg>${HEADERS_TOKEN}</arg>
 <arg>${HEADERS}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.016470" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:12.790915" elapsed="0.000000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.019468" level="INFO">${2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri} = $2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri</msg>
+<msg time="2024-10-14T10:30:12.797916" level="INFO">${2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri} = $2b$10$v.fSXgLUBubAaKB/hmy8pelOjKKbXH9aY/spSa/Nv1/2M8gJup4Ri</msg>
 <arg>${password}</arg>
 <arg>${response_json['user']['password']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.018469" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:12.791916" elapsed="0.006000"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.022469" level="INFO">Argument types are:
+<msg time="2024-10-14T10:30:12.799915" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.020468" elapsed="0.002001"/>
+<status status="PASS" start="2024-10-14T10:30:12.797916" elapsed="0.001999"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:48.161917" elapsed="0.861553"/>
+<status status="PASS" start="2024-10-14T10:30:12.170916" elapsed="0.628999"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:48.152918" elapsed="0.870552"/>
+<status status="PASS" start="2024-10-14T10:30:12.159915" elapsed="0.640000"/>
 </kw>
 <kw name="Cadastrar o usuário" owner="kw_register_user">
 <kw name="Get Fake Account" owner="account">
-<msg time="2024-10-01T14:19:49.026470" level="INFO">${account} = {'name': 'Beatriz Monteiro', 'email': 'da-cruzmateus@example.com', 'cpf': '52378410662'}</msg>
+<msg time="2024-10-14T10:30:12.802915" level="INFO">${account} = {'name': 'Hellena Câmara', 'email': 'sofiamelo@example.org', 'cpf': '52168439060'}</msg>
 <var>${account}</var>
-<status status="PASS" start="2024-10-01T14:19:49.025469" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:12.801917" elapsed="0.000998"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${account}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.027470" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:12.802915" elapsed="0.003001"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.030469" level="INFO">${BODY_USER} = {'fullName': 'Beatriz Monteiro', 'mail': 'da-cruzmateus@example.com', 'accessProfile': 'ADMIN', 'cpf': '52378410662', 'password': '12345@Test', 'confirmPassword': '12345@Test'}</msg>
+<msg time="2024-10-14T10:30:12.806917" level="INFO">${BODY_USER} = {'fullName': 'Hellena Câmara', 'mail': 'sofiamelo@example.org', 'accessProfile': 'ADMIN', 'cpf': '52168439060', 'password': '12345@Test', 'confirmPassword': '12345@Test'}</msg>
 <var>${BODY_USER}</var>
 <arg>fullName=${account}[name]</arg>
 <arg>mail=${account}[email]</arg>
@@ -377,350 +377,348 @@
 <arg>password=${SENHA}</arg>
 <arg>confirmPassword=${SENHA}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.029470" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:12.805916" elapsed="0.002000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${BODY_USER}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.038469" elapsed="0.003000"/>
+<status status="PASS" start="2024-10-14T10:30:12.807916" elapsed="0.001999"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:49.330957" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/user/ 
+<msg time="2024-10-14T10:30:13.051432" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/user/ 
  path_url=/api/user/ 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyNzgwMzE4NywiZXhwIjoxNzI3ODg5NTg3fQ.X5jOD8tmWYOFyVnEyHaoUTlpKDzbszFhUYSai7nBWQg', 'Content-Length': '176'} 
- body=b'{"fullName": "Beatriz Monteiro", "mail": "da-cruzmateus@example.com", "accessProfile": "ADMIN", "cpf": "52378410662", "password": "12345@Test", "confirmPassword": "12345@Test"}' 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmRiNWU5ZWI2MjI0ODQzOTAzYzQ0Y2IiLCJmdWxsTmFtZSI6IlFhLUNvZGVycy1TWVNBRE1JTiIsIm1haWwiOiJzeXNhZG1pbkBxYWNvZGVycy5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCR2LmZTWGdMVUJ1YkFhS0IvaG15OHBlbE9qS0tiWEg5YVkvc3BTYS9OdjEvMk04Z0p1cDRSaSIsImFjY2Vzc1Byb2ZpbGUiOiJTWVNBRE1JTiIsImNwZiI6IjExMTExMTExMTExIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjExMTExMTExMTExMTExMTExMSIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2V4dGEtZmVpcmEsIDA2LzA5LzIwMjQsIDE2OjU3OjE4IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IjAxIiwiY29tcGFueUlkIjoiUWEuQ29kZXJzIiwiX2lkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNjIn1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.YxZKnRS9BjxvRUOOcO_tv5ZJCOeo-MXL3oXq52rmfoA', 'Content-Length': '175'} 
+ body=b'{"fullName": "Hellena C\\u00e2mara", "mail": "sofiamelo@example.org", "accessProfile": "ADMIN", "cpf": "52168439060", "password": "12345@Test", "confirmPassword": "12345@Test"}' 
  </msg>
-<msg time="2024-10-01T14:19:49.330957" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/user/ 
+<msg time="2024-10-14T10:30:13.051432" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/user/ 
  status=201, reason=Created 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '467', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"1d3-PdwQ1ZBSdRrvaMwgtwzIBjHvhZ8"'} 
- body={"msg":"Olá Beatriz Monteiro, cadastro realizado com sucesso.","user":{"_id":"66fc2f33b8d32c9e73da60a4","fullName":"Beatriz Monteiro","mail":"da-cruzmateus@example.com","accessProfile":"ADMIN","cpf":"52378410662","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"terça-feira, 01/10/2024, 14:19:47 BRT","registrationNumber":"QaCoders-327","_id":"66fc2f33b8d32c9e73da60a5"}],"__v":0}} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '462', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"1ce-CIxCupquvWvmP2rZT6uWYb1H18E"'} 
+ body={"msg":"Olá Hellena Câmara, cadastro realizado com sucesso.","user":{"_id":"670d1ce1b8d32c9e73fa0465","fullName":"Hellena Câmara","mail":"sofiamelo@example.org","accessProfile":"ADMIN","cpf":"52168439060","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"segunda-feira, 14/10/2024, 10:30:09 BRT","registrationNumber":"QaCoders-764","_id":"670d1ce1b8d32c9e73fa0466"}],"__v":0}} 
  </msg>
-<msg time="2024-10-01T14:19:49.331927" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<msg time="2024-10-14T10:30:13.052433" level="INFO">${response} = &lt;Response [201]&gt;</msg>
 <var>${response}</var>
 <arg>alias=auth</arg>
 <arg>url=${ENDPOINT_USER}</arg>
 <arg>json=${BODY_USER}</arg>
 <arg>headers=${HEADERS_TOKEN}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.041469" elapsed="0.291458"/>
+<status status="PASS" start="2024-10-14T10:30:12.809915" elapsed="0.242518"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.333927" elapsed="0.002991"/>
+<status status="PASS" start="2024-10-14T10:30:13.052433" elapsed="0.002999"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${response.text}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.337925" elapsed="0.005325"/>
+<status status="PASS" start="2024-10-14T10:30:13.056431" elapsed="0.003000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.349248" level="INFO">${response_user} = {'msg': 'Olá Beatriz Monteiro, cadastro realizado com sucesso.', 'user': {'_id': '66fc2f33b8d32c9e73da60a4', 'fullName': 'Beatriz Monteiro', 'mail': 'da-cruzmateus@example.com', 'accessProfile': 'ADMI...</msg>
+<msg time="2024-10-14T10:30:13.061431" level="INFO">${response_user} = {'msg': 'Olá Hellena Câmara, cadastro realizado com sucesso.', 'user': {'_id': '670d1ce1b8d32c9e73fa0465', 'fullName': 'Hellena Câmara', 'mail': 'sofiamelo@example.org', 'accessProfile': 'ADMIN', 'cpf...</msg>
 <arg>${response_user}</arg>
 <arg>${response.json()}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.344249" elapsed="0.004999"/>
+<status status="PASS" start="2024-10-14T10:30:13.059431" elapsed="0.002000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.351249" level="INFO">{'msg': 'Olá Beatriz Monteiro, cadastro realizado com sucesso.', 'user': {'_id': '66fc2f33b8d32c9e73da60a4', 'fullName': 'Beatriz Monteiro', 'mail': 'da-cruzmateus@example.com', 'accessProfile': 'ADMIN', 'cpf': '52378410662', 'status': True, 'audit': [{'registeredBy': {'userId': '66db5e9eb6224843903c44cb', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'terça-feira, 01/10/2024, 14:19:47 BRT', 'registrationNumber': 'QaCoders-327', '_id': '66fc2f33b8d32c9e73da60a5'}], '__v': 0}}</msg>
+<msg time="2024-10-14T10:30:13.064432" level="INFO">{'msg': 'Olá Hellena Câmara, cadastro realizado com sucesso.', 'user': {'_id': '670d1ce1b8d32c9e73fa0465', 'fullName': 'Hellena Câmara', 'mail': 'sofiamelo@example.org', 'accessProfile': 'ADMIN', 'cpf': '52168439060', 'status': True, 'audit': [{'registeredBy': {'userId': '66db5e9eb6224843903c44cb', 'userLogin': 'sysadmin@qacoders.com'}, 'registrationDate': 'segunda-feira, 14/10/2024, 10:30:09 BRT', 'registrationNumber': 'QaCoders-764', '_id': '670d1ce1b8d32c9e73fa0466'}], '__v': 0}}</msg>
 <arg>${response_user}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.350249" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.064432" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.355250" level="INFO">Argument types are:
+<msg time="2024-10-14T10:30:13.067432" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.352248" elapsed="0.003002"/>
+<status status="PASS" start="2024-10-14T10:30:13.065432" elapsed="0.002000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.361249" level="INFO">${USER_MAIL} = da-cruzmateus@example.com</msg>
+<msg time="2024-10-14T10:30:13.070432" level="INFO">${USER_MAIL} = sofiamelo@example.org</msg>
 <arg>${USER_MAIL}</arg>
 <arg>${response.json()['user']['mail']}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.356249" elapsed="0.005000"/>
+<status status="PASS" start="2024-10-14T10:30:13.067432" elapsed="0.003000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${USER_MAIL}</arg>
 <arg>${response.json()['user']['mail']}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.362248" elapsed="0.002001"/>
+<status status="PASS" start="2024-10-14T10:30:13.070432" elapsed="0.002001"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.366249" level="INFO">${USER_ID} = 66fc2f33b8d32c9e73da60a4</msg>
+<msg time="2024-10-14T10:30:13.077432" level="INFO">${USER_ID} = 670d1ce1b8d32c9e73fa0465</msg>
 <arg>${USER_ID}</arg>
 <arg>${response.json()['user']['_id']}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.365248" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.074432" elapsed="0.003000"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
 <arg>${USER_ID}</arg>
 <arg>${response.json()['user']['_id']}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.366249" elapsed="0.005998"/>
+<status status="PASS" start="2024-10-14T10:30:13.078433" elapsed="0.001999"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.373248" level="INFO">66fc2f33b8d32c9e73da60a4</msg>
+<msg time="2024-10-14T10:30:13.081432" level="INFO">670d1ce1b8d32c9e73fa0465</msg>
 <arg>${USER_ID}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.373248" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.080432" elapsed="0.001000"/>
 </kw>
 <return>
 <value>${response_user}</value>
 <value>${account}</value>
-<status status="PASS" start="2024-10-01T14:19:49.373248" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.083433" elapsed="0.000000"/>
 </return>
-<status status="PASS" start="2024-10-01T14:19:49.024470" elapsed="0.349778"/>
+<status status="PASS" start="2024-10-14T10:30:12.800916" elapsed="0.283517"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.375247" level="INFO">${BODY} = {'mail': 'da-cruzmateus@example.com', 'password': '12345@Test'}</msg>
+<msg time="2024-10-14T10:30:13.085432" level="INFO">${BODY} = {'mail': 'sofiamelo@example.org', 'password': '12345@Test'}</msg>
 <var>${BODY}</var>
 <arg>mail=${USER_MAIL}</arg>
 <arg>password=${SENHA}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.374248" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.084433" elapsed="0.000999"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:49.616539" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:13.322942" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/login/ 
  path_url=/api/login/ 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '63'} 
- body=b'{"mail": "da-cruzmateus@example.com", "password": "12345@Test"}' 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '59'} 
+ body=b'{"mail": "sofiamelo@example.org", "password": "12345@Test"}' 
  </msg>
-<msg time="2024-10-01T14:19:49.616539" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
+<msg time="2024-10-14T10:30:13.322942" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/login/ 
  status=200, reason=OK 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:47 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"51f-JBtvB+kJKUtarczW4hWRTB4qFFU"', 'Content-Encoding': 'gzip'} 
- body={"msg":"Olá Beatriz Monteiro, autenticação autorizada com sucesso!","user":{"_id":"66fc2f33b8d32c9e73da60a4","fullName":"Beatriz Monteiro","mail":"da-cruzmateus@example.com","password":"$2b$10$jrJ4ypdIniWzw0C05PfUces0GzexbOEakVBq9698vncKqXz7bw1PO","accessProfile":"ADMIN","cpf":"52378410662","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"terça-feira, 01/10/2024, 14:19:47 BRT","registrationNumber":"QaCoders-327","_id":"66fc2f33b8d32c9e73da60a5"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGpySjR5cGRJbmlXencwQzA1UGZVY2VzMEd6ZXhiT0Vha1ZCcTk2OTh2bmNLcVh6N2J3MVBPIiwiYWNjZXNzUHJvZmlsZSI6IkFETUlOIiwiY3BmIjoiNTIzNzg0MTA2NjIiLCJzdGF0dXMiOnRydWUsImF1ZGl0IjpbeyJyZWdpc3RlcmVkQnkiOnsidXNlcklkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNiIiwidXNlckxvZ2luIjoic3lzYWRtaW5AcWFjb2RlcnMuY29tIn0sInJlZ2lzdHJhdGlvbkRhdGUiOiJ0ZXLDp2EtZmVpcmEsIDAxLzEwLzIwMjQsIDE0OjE5OjQ3IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IlFhQ29kZXJzLTMyNyIsIl9pZCI6IjY2ZmMyZjMzYjhkMzJjOWU3M2RhNjBhNSJ9XSwiX192IjowLCJpYXQiOjE3Mjc4MDMxODcsImV4cCI6MTcyNzg4OTU4N30.qkTHdqeedmIEAaVF1mCS03SEhFsQF0kPUAvh9d9xV7c"} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:09 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"515-2mGbJ+FJPMwe/4fBWWHBwoSVHXU"', 'Content-Encoding': 'gzip'} 
+ body={"msg":"Olá Hellena Câmara, autenticação autorizada com sucesso!","user":{"_id":"670d1ce1b8d32c9e73fa0465","fullName":"Hellena Câmara","mail":"sofiamelo@example.org","password":"$2b$10$NnTtbIFQDmaClI4QU392n.k0aEg7QHv63G.iNzI/l14hMirRaDdFS","accessProfile":"ADMIN","cpf":"52168439060","status":true,"audit":[{"registeredBy":{"userId":"66db5e9eb6224843903c44cb","userLogin":"sysadmin@qacoders.com"},"registrationDate":"segunda-feira, 14/10/2024, 10:30:09 BRT","registrationNumber":"QaCoders-764","_id":"670d1ce1b8d32c9e73fa0466"}],"__v":0},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQyYiQxMCROblR0YklGUURtYUNsSTRRVTM5Mm4uazBhRWc3UUh2NjNHLmlOekkvbDE0aE1pclJhRGRGUyIsImFjY2Vzc1Byb2ZpbGUiOiJBRE1JTiIsImNwZiI6IjUyMTY4NDM5MDYwIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjY2ZGI1ZTllYjYyMjQ4NDM5MDNjNDRjYiIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2VndW5kYS1mZWlyYSwgMTQvMTAvMjAyNCwgMTA6MzA6MDkgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtNzY0IiwiX2lkIjoiNjcwZDFjZTFiOGQzMmM5ZTczZmEwNDY2In1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.rj1Eljtszl89KydXLR693k8mAVn-1GpW8etSYyONtbI"} 
  </msg>
-<msg time="2024-10-01T14:19:49.616539" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<msg time="2024-10-14T10:30:13.323944" level="INFO">${response} = &lt;Response [200]&gt;</msg>
 <var>${response}</var>
 <arg>alias=auth</arg>
 <arg>url=${ENDPOINT_LOGIN_ADMIN}</arg>
 <arg>json=${BODY}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.379247" elapsed="0.238292"/>
+<status status="PASS" start="2024-10-14T10:30:13.086432" elapsed="0.237512"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.620539" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGpySjR...</msg>
+<msg time="2024-10-14T10:30:13.325943" level="INFO">${token} = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQyYiQxMCROblR0YklGUUR...</msg>
 <arg>${token}</arg>
 <arg>${response.json()['token']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.618539" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:13.324944" elapsed="0.001998"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.621539" level="INFO">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGpySjR5cGRJbmlXencwQzA1UGZVY2VzMEd6ZXhiT0Vha1ZCcTk2OTh2bmNLcVh6N2J3MVBPIiwiYWNjZXNzUHJvZmlsZSI6IkFETUlOIiwiY3BmIjoiNTIzNzg0MTA2NjIiLCJzdGF0dXMiOnRydWUsImF1ZGl0IjpbeyJyZWdpc3RlcmVkQnkiOnsidXNlcklkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNiIiwidXNlckxvZ2luIjoic3lzYWRtaW5AcWFjb2RlcnMuY29tIn0sInJlZ2lzdHJhdGlvbkRhdGUiOiJ0ZXLDp2EtZmVpcmEsIDAxLzEwLzIwMjQsIDE0OjE5OjQ3IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IlFhQ29kZXJzLTMyNyIsIl9pZCI6IjY2ZmMyZjMzYjhkMzJjOWU3M2RhNjBhNSJ9XSwiX192IjowLCJpYXQiOjE3Mjc4MDMxODcsImV4cCI6MTcyNzg4OTU4N30.qkTHdqeedmIEAaVF1mCS03SEhFsQF0kPUAvh9d9xV7c</msg>
+<msg time="2024-10-14T10:30:13.326942" level="INFO">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQyYiQxMCROblR0YklGUURtYUNsSTRRVTM5Mm4uazBhRWc3UUh2NjNHLmlOekkvbDE0aE1pclJhRGRGUyIsImFjY2Vzc1Byb2ZpbGUiOiJBRE1JTiIsImNwZiI6IjUyMTY4NDM5MDYwIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjY2ZGI1ZTllYjYyMjQ4NDM5MDNjNDRjYiIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2VndW5kYS1mZWlyYSwgMTQvMTAvMjAyNCwgMTA6MzA6MDkgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtNzY0IiwiX2lkIjoiNjcwZDFjZTFiOGQzMmM5ZTczZmEwNDY2In1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.rj1Eljtszl89KydXLR693k8mAVn-1GpW8etSYyONtbI</msg>
 <arg>${token}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.621539" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.326942" elapsed="0.000000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.624539" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3Jk...</msg>
+<msg time="2024-10-14T10:30:13.327943" level="INFO">${HEADERS} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQy...</msg>
 <var>${HEADERS}</var>
 <arg>Authorization=${token}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.623539" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.327943" elapsed="0.001001"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.626539" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3Jk...</msg>
+<msg time="2024-10-14T10:30:13.330943" level="INFO">${HEADERS_TOKEN} = {'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQy...</msg>
 <arg>${HEADERS_TOKEN}</arg>
 <arg>${HEADERS}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.624539" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:13.329944" elapsed="0.000999"/>
 </kw>
 <kw name="Should Be Equal As Numbers" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.629539" level="INFO">Argument types are:
+<msg time="2024-10-14T10:30:13.332942" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.627539" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:13.331942" elapsed="0.001000"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
 <arg>${response.json()['user']['mail']}</arg>
 <arg>${USER_MAIL}</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.630539" elapsed="0.002999"/>
+<status status="PASS" start="2024-10-14T10:30:13.333945" elapsed="0.001998"/>
 </kw>
 <kw name="Should Not Be Empty" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.633538" level="INFO">Length is 752.</msg>
+<msg time="2024-10-14T10:30:13.336944" level="INFO">Length is 747.</msg>
 <arg>${token}</arg>
 <doc>Verifies that the given item is not empty.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.633538" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.336944" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:48.151919" elapsed="1.482664"/>
-</kw>
-<status status="PASS" start="2024-10-01T14:19:47.085128" elapsed="2.549455"/>
+<status status="PASS" start="2024-10-14T10:30:12.154915" elapsed="1.182029"/>
 </kw>
 <kw name="Cadastrar um novo cliente" owner="kw_register_client">
 <kw name="dados dinamico cliente" owner="kw_dinamic_client">
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.637249" level="INFO">${NOME} = OSBpFLly</msg>
+<msg time="2024-10-14T10:30:13.340943" level="INFO">${NOME} = XjkxKomE</msg>
 <var>${NOME}</var>
 <arg>length=8</arg>
 <arg>chars=[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.637249" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.339943" elapsed="0.001000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.638226" level="INFO">${SOBRENOME} = MkRgLpOo</msg>
+<msg time="2024-10-14T10:30:13.341944" level="INFO">${SOBRENOME} = oItlHReq</msg>
 <var>${SOBRENOME}</var>
 <arg>length=8</arg>
 <arg>chars=[LETTERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.638226" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.340943" elapsed="0.001001"/>
 </kw>
 <kw name="Catenate" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.639227" level="INFO">${FULLNAME} = JOSBpFLly FMkRgLpOo</msg>
+<msg time="2024-10-14T10:30:13.342944" level="INFO">${FULLNAME} = JXjkxKomE FoItlHReq</msg>
 <var>${FULLNAME}</var>
 <arg>J${NOME}</arg>
 <arg>F${SOBRENOME}</arg>
 <doc>Catenates the given items together and returns the resulted string.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.638226" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.342944" elapsed="0.000000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.640252" level="INFO">${NUMBER_EIGHT} = 95161904</msg>
+<msg time="2024-10-14T10:30:13.344944" level="INFO">${NUMBER_EIGHT} = 09491520</msg>
 <var>${NUMBER_EIGHT}</var>
 <arg>length=8</arg>
 <arg>chars=[NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.639227" elapsed="0.001025"/>
+<status status="PASS" start="2024-10-14T10:30:13.343943" elapsed="0.001001"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.640252" level="INFO">${NUMBER_SERVEN} = 7157211</msg>
+<msg time="2024-10-14T10:30:13.346944" level="INFO">${NUMBER_SERVEN} = 7481457</msg>
 <var>${NUMBER_SERVEN}</var>
 <arg>length=7</arg>
 <arg>chars=[NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.640252" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.345944" elapsed="0.001000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.641249" level="INFO">${NUMBER_FOURTEEN} = 79593064534849</msg>
+<msg time="2024-10-14T10:30:13.347944" level="INFO">${NUMBER_FOURTEEN} = 57457941424739</msg>
 <var>${NUMBER_FOURTEEN}</var>
 <arg>length=14</arg>
 <arg>chars=[NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.641249" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.346944" elapsed="0.001000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.643228" level="INFO">${NUMBER_ELEVEN} = 29979017347</msg>
+<msg time="2024-10-14T10:30:13.348944" level="INFO">${NUMBER_ELEVEN} = 29637145205</msg>
 <var>${NUMBER_ELEVEN}</var>
 <arg>length=11</arg>
 <arg>chars=[NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.642227" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:13.347944" elapsed="0.001000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.645228" level="INFO">${CHAR} = ML</msg>
+<msg time="2024-10-14T10:30:13.349944" level="INFO">${CHAR} = TS</msg>
 <var>${CHAR}</var>
 <arg>length=2</arg>
 <arg>chars=[UPPER]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.644227" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.348944" elapsed="0.001000"/>
 </kw>
 <kw name="Generate Random String" owner="String">
-<msg time="2024-10-01T14:19:49.647227" level="INFO">${ALFA} = Be5RnQCE</msg>
+<msg time="2024-10-14T10:30:13.350944" level="INFO">${ALFA} = l4yf75GT</msg>
 <var>${ALFA}</var>
 <arg>length=8</arg>
 <arg>chars=[LETTERS][NUMBERS]</arg>
 <doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.646228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.349944" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.651229" level="INFO">${EMAIL_CLIENT} = OSBpFLlyMkRgLpOo79593064534849@hotmail.com</msg>
+<msg time="2024-10-14T10:30:13.351943" level="INFO">${EMAIL_CLIENT} = XjkxKomEoItlHReq57457941424739@hotmail.com</msg>
 <var>${EMAIL_CLIENT}</var>
 <arg>${NOME}${SOBRENOME}${NUMBER_FOURTEEN}@hotmail.com</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.647227" elapsed="0.004002"/>
+<status status="PASS" start="2024-10-14T10:30:13.350944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.653229" level="INFO">${PHONE_CLIENT} = 79593064534849</msg>
+<msg time="2024-10-14T10:30:13.351943" level="INFO">${PHONE_CLIENT} = 57457941424739</msg>
 <var>${PHONE_CLIENT}</var>
 <arg>${NUMBER_FOURTEEN}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.652229" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.351943" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.654226" level="INFO">${BIRTH_DATE} = 95161904</msg>
+<msg time="2024-10-14T10:30:13.354943" level="INFO">${BIRTH_DATE} = 09491520</msg>
 <var>${BIRTH_DATE}</var>
 <arg>${NUMBER_EIGHT}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.653229" elapsed="0.000997"/>
+<status status="PASS" start="2024-10-14T10:30:13.353944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.655226" level="INFO">${RG} = 7157211</msg>
+<msg time="2024-10-14T10:30:13.355944" level="INFO">${RG} = 7481457</msg>
 <var>${RG}</var>
 <arg>${NUMBER_SERVEN}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.654226" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.355944" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.655226" level="INFO">${CPF} = 29979017347</msg>
+<msg time="2024-10-14T10:30:13.356943" level="INFO">${CPF} = 29637145205</msg>
 <var>${CPF}</var>
 <arg>${NUMBER_ELEVEN}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.655226" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.355944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.656226" level="INFO">${COUNTRY} = OSBpFLly</msg>
+<msg time="2024-10-14T10:30:13.357944" level="INFO">${COUNTRY} = XjkxKomE</msg>
 <var>${COUNTRY}</var>
 <arg>${NOME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.656226" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.356943" elapsed="0.001001"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.662227" level="INFO">${ZIPCODE} = 95161904</msg>
+<msg time="2024-10-14T10:30:13.358945" level="INFO">${ZIPCODE} = 09491520</msg>
 <var>${ZIPCODE}</var>
 <arg>${NUMBER_EIGHT}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.661228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.357944" elapsed="0.001001"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.667228" level="INFO">${CITY} = OSBpFLly</msg>
+<msg time="2024-10-14T10:30:13.359944" level="INFO">${CITY} = XjkxKomE</msg>
 <var>${CITY}</var>
 <arg>${NOME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.662227" elapsed="0.005001"/>
+<status status="PASS" start="2024-10-14T10:30:13.359944" elapsed="0.000000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.669228" level="INFO">${STATE} = ML</msg>
+<msg time="2024-10-14T10:30:13.360944" level="INFO">${STATE} = TS</msg>
 <var>${STATE}</var>
 <arg>${CHAR}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.669228" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.359944" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.671227" level="INFO">${DISTRICT} = JOSBpFLly FMkRgLpOo</msg>
+<msg time="2024-10-14T10:30:13.361944" level="INFO">${DISTRICT} = JXjkxKomE FoItlHReq</msg>
 <var>${DISTRICT}</var>
 <arg>${FULLNAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.670228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.360944" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.672228" level="INFO">${STREET} = JOSBpFLly FMkRgLpOo</msg>
+<msg time="2024-10-14T10:30:13.362944" level="INFO">${STREET} = JXjkxKomE FoItlHReq</msg>
 <var>${STREET}</var>
 <arg>${FULLNAME}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.671227" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.361944" elapsed="0.001000"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.673227" level="INFO">${NUMBER} = 95161904</msg>
+<msg time="2024-10-14T10:30:13.363943" level="INFO">${NUMBER} = 09491520</msg>
 <var>${NUMBER}</var>
 <arg>${NUMBER_EIGHT}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.672228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.362944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.674228" level="INFO">${COMPLEMENT} = Be5RnQCE</msg>
+<msg time="2024-10-14T10:30:13.364944" level="INFO">${COMPLEMENT} = l4yf75GT</msg>
 <var>${COMPLEMENT}</var>
 <arg>${ALFA}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.673227" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.363943" elapsed="0.001001"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.680228" level="INFO">${DINAMIC_DATE_CLIENT} = {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN'}</msg>
+<msg time="2024-10-14T10:30:13.365944" level="INFO">${DINAMIC_DATE_CLIENT} = {'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'currentRole': 'ADMIN'}</msg>
 <var>${DINAMIC_DATE_CLIENT}</var>
 <arg>fullName=${FULLNAME}</arg>
 <arg>birthDate=${BIRTH_DATE}</arg>
@@ -728,18 +726,18 @@
 <arg>phone=${PHONE_CLIENT}</arg>
 <arg>currentRole=ADMIN</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.675227" elapsed="0.005001"/>
+<status status="PASS" start="2024-10-14T10:30:13.364944" elapsed="0.001999"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.681226" level="INFO">${DINAMIC_DOCUMENT} = {'rg': '7157211', 'cpf': '29979017347'}</msg>
+<msg time="2024-10-14T10:30:13.367944" level="INFO">${DINAMIC_DOCUMENT} = {'rg': '7481457', 'cpf': '29637145205'}</msg>
 <var>${DINAMIC_DOCUMENT}</var>
 <arg>rg=${RG}</arg>
 <arg>cpf=${CPF}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.680228" elapsed="0.000998"/>
+<status status="PASS" start="2024-10-14T10:30:13.366943" elapsed="0.001001"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.683227" level="INFO">${DINAMIC_ADDRESS_CLIENT} = {'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE'}</msg>
+<msg time="2024-10-14T10:30:13.369943" level="INFO">${DINAMIC_ADDRESS_CLIENT} = {'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT'}</msg>
 <var>${DINAMIC_ADDRESS_CLIENT}</var>
 <arg>country=${COUNTRY}</arg>
 <arg>zipCode=${ZIPCODE}</arg>
@@ -750,24 +748,24 @@
 <arg>number=${NUMBER}</arg>
 <arg>complement=${COMPLEMENT}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.682226" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.367944" elapsed="0.001999"/>
 </kw>
 <return>
 <value>${DINAMIC_DATE_CLIENT}</value>
 <value>${DINAMIC_DOCUMENT}</value>
 <value>${DINAMIC_ADDRESS_CLIENT}</value>
-<status status="PASS" start="2024-10-01T14:19:49.684226" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.369943" elapsed="0.000000"/>
 </return>
-<msg time="2024-10-01T14:19:49.684226" level="INFO">${DINAMIC_DATE_CLIENT} = {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN'}</msg>
-<msg time="2024-10-01T14:19:49.685226" level="INFO">${DINAMIC_DOCUMENT} = {'rg': '7157211', 'cpf': '29979017347'}</msg>
-<msg time="2024-10-01T14:19:49.685226" level="INFO">${DINAMIC_ADDRESS_CLIENT} = {'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE'}</msg>
+<msg time="2024-10-14T10:30:13.370943" level="INFO">${DINAMIC_DATE_CLIENT} = {'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'currentRole': 'ADMIN'}</msg>
+<msg time="2024-10-14T10:30:13.370943" level="INFO">${DINAMIC_DOCUMENT} = {'rg': '7481457', 'cpf': '29637145205'}</msg>
+<msg time="2024-10-14T10:30:13.370943" level="INFO">${DINAMIC_ADDRESS_CLIENT} = {'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT'}</msg>
 <var>${DINAMIC_DATE_CLIENT}</var>
 <var>${DINAMIC_DOCUMENT}</var>
 <var>${DINAMIC_ADDRESS_CLIENT}</var>
-<status status="PASS" start="2024-10-01T14:19:49.636250" elapsed="0.048976"/>
+<status status="PASS" start="2024-10-14T10:30:13.338943" elapsed="0.032000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.692227" level="INFO">${ADDRESS_CLIENT} = {'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE'}</msg>
+<msg time="2024-10-14T10:30:13.381943" level="INFO">${ADDRESS_CLIENT} = {'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT'}</msg>
 <var>${ADDRESS_CLIENT}</var>
 <arg>country=${DINAMIC_ADDRESS_CLIENT['country']}</arg>
 <arg>zipCode=${DINAMIC_ADDRESS_CLIENT['zipCode']}</arg>
@@ -778,32 +776,32 @@
 <arg>number=${DINAMIC_ADDRESS_CLIENT['number']}</arg>
 <arg>complement=${DINAMIC_ADDRESS_CLIENT['complement']}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.685226" elapsed="0.009000"/>
+<status status="PASS" start="2024-10-14T10:30:13.371944" elapsed="0.009999"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.706228" level="INFO">${DOCUMENT_CLIENT} = {'rg': '7157211', 'cpf': '29979017347'}</msg>
+<msg time="2024-10-14T10:30:13.385943" level="INFO">${DOCUMENT_CLIENT} = {'rg': '7481457', 'cpf': '29637145205'}</msg>
 <var>${DOCUMENT_CLIENT}</var>
 <arg>rg=${DINAMIC_DOCUMENT['rg']}</arg>
 <arg>cpf=${DINAMIC_DOCUMENT['cpf']}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.695227" elapsed="0.011001"/>
+<status status="PASS" start="2024-10-14T10:30:13.381943" elapsed="0.004000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.708227" level="INFO">${LIST_CLIENT_DOCUMENT} = [{'rg': '7157211', 'cpf': '29979017347'}]</msg>
+<msg time="2024-10-14T10:30:13.386944" level="INFO">${LIST_CLIENT_DOCUMENT} = [{'rg': '7481457', 'cpf': '29637145205'}]</msg>
 <var>${LIST_CLIENT_DOCUMENT}</var>
 <arg>${DOCUMENT_CLIENT}</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.707228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.386944" elapsed="0.000000"/>
 </kw>
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.715227" level="INFO">${LIST_CLIENT_ADDRESS} = [{'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE'}]</msg>
+<msg time="2024-10-14T10:30:13.387944" level="INFO">${LIST_CLIENT_ADDRESS} = [{'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT'}]</msg>
 <var>${LIST_CLIENT_ADDRESS}</var>
 <arg>${ADDRESS_CLIENT}</arg>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.714228" elapsed="0.000999"/>
+<status status="PASS" start="2024-10-14T10:30:13.387944" elapsed="0.000000"/>
 </kw>
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.723226" level="INFO">${BODY_CLIENT} = {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN', 'documents': [{'rg': '7157211', 'c...</msg>
+<msg time="2024-10-14T10:30:13.408943" level="INFO">${BODY_CLIENT} = {'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'currentRole': 'ADMIN', 'documents': [{'rg': '7481457', 'c...</msg>
 <var>${BODY_CLIENT}</var>
 <arg>fullName=${DINAMIC_DATE_CLIENT['fullName']}</arg>
 <arg>birthDate=${DINAMIC_DATE_CLIENT['birthDate']}</arg>
@@ -813,197 +811,337 @@
 <arg>documents=${LIST_CLIENT_DOCUMENT}</arg>
 <arg>address=${LIST_CLIENT_ADDRESS}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.715227" elapsed="0.007999"/>
+<status status="PASS" start="2024-10-14T10:30:13.388944" elapsed="0.019999"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.724226" level="INFO">{'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN', 'documents': [{'rg': '7157211', 'cpf': '29979017347'}], 'address': [{'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE'}]}</msg>
+<msg time="2024-10-14T10:30:13.409943" level="INFO">{'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'currentRole': 'ADMIN', 'documents': [{'rg': '7481457', 'cpf': '29637145205'}], 'address': [{'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT'}]}</msg>
 <arg>${BODY_CLIENT}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.724226" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.408943" elapsed="0.001000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-10-01T14:19:49.924544" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/client/ 
+<msg time="2024-10-14T10:30:13.575944" level="INFO">POST Request : url=https://develop.qacoders.dev.br/api/client/ 
  path_url=/api/client/ 
- headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmZjMmYzM2I4ZDMyYzllNzNkYTYwYTQiLCJmdWxsTmFtZSI6IkJlYXRyaXogTW9udGVpcm8iLCJtYWlsIjoiZGEtY3J1em1hdGV1c0BleGFtcGxlLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGpySjR5cGRJbmlXencwQzA1UGZVY2VzMEd6ZXhiT0Vha1ZCcTk2OTh2bmNLcVh6N2J3MVBPIiwiYWNjZXNzUHJvZmlsZSI6IkFETUlOIiwiY3BmIjoiNTIzNzg0MTA2NjIiLCJzdGF0dXMiOnRydWUsImF1ZGl0IjpbeyJyZWdpc3RlcmVkQnkiOnsidXNlcklkIjoiNjZkYjVlOWViNjIyNDg0MzkwM2M0NGNiIiwidXNlckxvZ2luIjoic3lzYWRtaW5AcWFjb2RlcnMuY29tIn0sInJlZ2lzdHJhdGlvbkRhdGUiOiJ0ZXLDp2EtZmVpcmEsIDAxLzEwLzIwMjQsIDE0OjE5OjQ3IEJSVCIsInJlZ2lzdHJhdGlvbk51bWJlciI6IlFhQ29kZXJzLTMyNyIsIl9pZCI6IjY2ZmMyZjMzYjhkMzJjOWU3M2RhNjBhNSJ9XSwiX192IjowLCJpYXQiOjE3Mjc4MDMxODcsImV4cCI6MTcyNzg4OTU4N30.qkTHdqeedmIEAaVF1mCS03SEhFsQF0kPUAvh9d9xV7c', 'Content-Length': '433'} 
- body=b'{"fullName": "JOSBpFLly FMkRgLpOo", "birthDate": "95161904", "mail": "OSBpFLlyMkRgLpOo79593064534849@hotmail.com", "phone": "79593064534849", "currentRole": "ADMIN", "documents": [{"rg": "7157211", "cpf": "29979017347"}], "address": [{"country": "OSBpFLly", "zipCode": "95161904", "city": "OSBpFLly", "state": "ML", "district": "JOSBpFLly FMkRgLpOo", "street": "JOSBpFLly FMkRgLpOo", "number": "95161904", "complement": "Be5RnQCE"}]}' 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQyYiQxMCROblR0YklGUURtYUNsSTRRVTM5Mm4uazBhRWc3UUh2NjNHLmlOekkvbDE0aE1pclJhRGRGUyIsImFjY2Vzc1Byb2ZpbGUiOiJBRE1JTiIsImNwZiI6IjUyMTY4NDM5MDYwIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjY2ZGI1ZTllYjYyMjQ4NDM5MDNjNDRjYiIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2VndW5kYS1mZWlyYSwgMTQvMTAvMjAyNCwgMTA6MzA6MDkgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtNzY0IiwiX2lkIjoiNjcwZDFjZTFiOGQzMmM5ZTczZmEwNDY2In1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.rj1Eljtszl89KydXLR693k8mAVn-1GpW8etSYyONtbI', 'Content-Length': '433'} 
+ body=b'{"fullName": "JXjkxKomE FoItlHReq", "birthDate": "09491520", "mail": "XjkxKomEoItlHReq57457941424739@hotmail.com", "phone": "57457941424739", "currentRole": "ADMIN", "documents": [{"rg": "7481457", "cpf": "29637145205"}], "address": [{"country": "XjkxKomE", "zipCode": "09491520", "city": "XjkxKomE", "state": "TS", "district": "JXjkxKomE FoItlHReq", "street": "JXjkxKomE FoItlHReq", "number": "09491520", "complement": "l4yf75GT"}]}' 
  </msg>
-<msg time="2024-10-01T14:19:49.924544" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/client/ 
+<msg time="2024-10-14T10:30:13.575944" level="INFO">POST Response : url=https://develop.qacoders.dev.br/api/client/ 
  status=201, reason=Created 
- headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Tue, 01 Oct 2024 17:19:48 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '794', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"31a-TilI2bkLbKOsqsnJnek/ADfuhlM"'} 
- body={"msg":"Cliente criado com sucesso.","newClient":{"fullName":"JOSBpFLly FMkRgLpOo","birthDate":"95161904","mail":"OSBpFLlyMkRgLpOo79593064534849@hotmail.com","phone":"79593064534849","currentRole":"ADMIN","documents":[{"cpf":"29979017347","rg":"7157211","_id":"66fc2f34b8d32c9e73da60b1"}],"address":[{"country":"OSBpFLly","zipCode":"95161904","city":"OSBpFLly","state":"ML","district":"JOSBpFLly FMkRgLpOo","street":"JOSBpFLly FMkRgLpOo","number":"95161904","complement":"Be5RnQCE","_id":"66fc2f34b8d32c9e73da60b2"}],"audit":[{"registrationDate":"terça-feira, 01/10/2024, 14:19:48 BRT","registeredBy":{"userId":"66fc2f33b8d32c9e73da60a4","userLogin":"da-cruzmateus@example.com"},"registrationNumber":"QaCoders-0001","_id":"66fc2f34b8d32c9e73da60b3"}],"_id":"66fc2f34b8d32c9e73da60b0","__v":0}} 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '792', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"318-kR9J359vDuJSyqKuxkp8YbgNIRQ"'} 
+ body={"msg":"Cliente criado com sucesso.","newClient":{"fullName":"JXjkxKomE FoItlHReq","birthDate":"09491520","mail":"XjkxKomEoItlHReq57457941424739@hotmail.com","phone":"57457941424739","currentRole":"ADMIN","documents":[{"cpf":"29637145205","rg":"7481457","_id":"670d1ce2b8d32c9e73fa0472"}],"address":[{"country":"XjkxKomE","zipCode":"09491520","city":"XjkxKomE","state":"TS","district":"JXjkxKomE FoItlHReq","street":"JXjkxKomE FoItlHReq","number":"09491520","complement":"l4yf75GT","_id":"670d1ce2b8d32c9e73fa0473"}],"audit":[{"registrationDate":"segunda-feira, 14/10/2024, 10:30:10 BRT","registeredBy":{"userId":"670d1ce1b8d32c9e73fa0465","userLogin":"sofiamelo@example.org"},"registrationNumber":"QaCoders-00024","_id":"670d1ce2b8d32c9e73fa0474"}],"_id":"670d1ce2b8d32c9e73fa0471","__v":0}} 
  </msg>
-<msg time="2024-10-01T14:19:49.925543" level="INFO">${response_client} = &lt;Response [201]&gt;</msg>
+<msg time="2024-10-14T10:30:13.575944" level="INFO">${response_client} = &lt;Response [201]&gt;</msg>
 <var>${response_client}</var>
 <arg>auth</arg>
 <arg>${ENDPOINT_CLIENT}</arg>
 <arg>json=${BODY_CLIENT}</arg>
 <arg>headers=${HEADERS_TOKEN}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.724226" elapsed="0.202291"/>
+<status status="PASS" start="2024-10-14T10:30:13.409943" elapsed="0.166001"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.930517" level="INFO">{'msg': 'Cliente criado com sucesso.', 'newClient': {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN', 'documents': [{'cpf': '29979017347', 'rg': '7157211', '_id': '66fc2f34b8d32c9e73da60b1'}], 'address': [{'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE', '_id': '66fc2f34b8d32c9e73da60b2'}], 'audit': [{'registrationDate': 'terça-feira, 01/10/2024, 14:19:48 BRT', 'registeredBy': {'userId': '66fc2f33b8d32c9e73da60a4', 'userLogin': 'da-cruzmateus@example.com'}, 'registrationNumber': 'QaCoders-0001', '_id': '66fc2f34b8d32c9e73da60b3'}], '_id': '66fc2f34b8d32c9e73da60b0', '__v': 0}}</msg>
+<msg time="2024-10-14T10:30:13.577943" level="INFO">{'msg': 'Cliente criado com sucesso.', 'newClient': {'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'currentRole': 'ADMIN', 'documents': [{'cpf': '29637145205', 'rg': '7481457', '_id': '670d1ce2b8d32c9e73fa0472'}], 'address': [{'country': 'XjkxKomE', 'zipCode': '09491520', 'city': 'XjkxKomE', 'state': 'TS', 'district': 'JXjkxKomE FoItlHReq', 'street': 'JXjkxKomE FoItlHReq', 'number': '09491520', 'complement': 'l4yf75GT', '_id': '670d1ce2b8d32c9e73fa0473'}], 'audit': [{'registrationDate': 'segunda-feira, 14/10/2024, 10:30:10 BRT', 'registeredBy': {'userId': '670d1ce1b8d32c9e73fa0465', 'userLogin': 'sofiamelo@example.org'}, 'registrationNumber': 'QaCoders-00024', '_id': '670d1ce2b8d32c9e73fa0474'}], '_id': '670d1ce2b8d32c9e73fa0471', '__v': 0}}</msg>
 <arg>${response_client.json()}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.927517" elapsed="0.003000"/>
+<status status="PASS" start="2024-10-14T10:30:13.576943" elapsed="0.002001"/>
 </kw>
 <kw name="Status Should Be" owner="RequestsLibrary">
 <arg>201</arg>
 <doc>Fails if response status code is different than the expected.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.931517" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.578944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.935538" level="INFO">${EMAIL_CLIENTE} = OSBpFLlyMkRgLpOo79593064534849@hotmail.com</msg>
+<msg time="2024-10-14T10:30:13.584943" level="INFO">${EMAIL_CLIENTE} = XjkxKomEoItlHReq57457941424739@hotmail.com</msg>
 <arg>${EMAIL_CLIENTE}</arg>
 <arg>${response_client.json()['newClient']['mail']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.933516" elapsed="0.002022"/>
+<status status="PASS" start="2024-10-14T10:30:13.579943" elapsed="0.005000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.936537" level="INFO">OSBpFLlyMkRgLpOo79593064534849@hotmail.com</msg>
+<msg time="2024-10-14T10:30:13.585943" level="INFO">XjkxKomEoItlHReq57457941424739@hotmail.com</msg>
 <arg>${EMAIL_CLIENTE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.936537" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.584943" elapsed="0.001000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.938515" level="INFO">${TELEFONE_CLIENTE} = 79593064534849</msg>
+<msg time="2024-10-14T10:30:13.589943" level="INFO">${TELEFONE_CLIENTE} = 57457941424739</msg>
 <arg>${TELEFONE_CLIENTE}</arg>
 <arg>${response_client.json()['newClient']['phone']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.936537" elapsed="0.002999"/>
+<status status="PASS" start="2024-10-14T10:30:13.585943" elapsed="0.004000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.939536" level="INFO">79593064534849</msg>
+<msg time="2024-10-14T10:30:13.590943" level="INFO">57457941424739</msg>
 <arg>${TELEFONE_CLIENTE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.939536" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.590943" elapsed="0.001000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.942515" level="INFO">${RG_CLIENTE} = 7157211</msg>
+<msg time="2024-10-14T10:30:13.596943" level="INFO">${RG_CLIENTE} = 7481457</msg>
 <arg>${RG_CLIENTE}</arg>
 <arg>${response_client.json()['newClient']['documents'][0]['rg']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.940536" elapsed="0.002981"/>
+<status status="PASS" start="2024-10-14T10:30:13.591943" elapsed="0.005000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.943517" level="INFO">7157211</msg>
+<msg time="2024-10-14T10:30:13.597944" level="INFO">7481457</msg>
 <arg>${RG_CLIENTE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.943517" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.597944" elapsed="0.000999"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.947515" level="INFO">${CPF_CLIENTE} = 29979017347</msg>
+<msg time="2024-10-14T10:30:13.602942" level="INFO">${CPF_CLIENTE} = 29637145205</msg>
 <arg>${CPF_CLIENTE}</arg>
 <arg>${response_client.json()['newClient']['documents'][0]['cpf']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.944539" elapsed="0.002976"/>
+<status status="PASS" start="2024-10-14T10:30:13.598943" elapsed="0.003999"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.948515" level="INFO">29979017347</msg>
+<msg time="2024-10-14T10:30:13.603943" level="INFO">29637145205</msg>
 <arg>${CPF_CLIENTE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.947515" elapsed="0.001000"/>
+<status status="PASS" start="2024-10-14T10:30:13.602942" elapsed="0.001001"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.951515" level="INFO">${ID_CLIENTE} = 66fc2f34b8d32c9e73da60b0</msg>
+<msg time="2024-10-14T10:30:13.608943" level="INFO">${ID_CLIENTE} = 670d1ce2b8d32c9e73fa0471</msg>
 <arg>${ID_CLIENTE}</arg>
 <arg>${response_client.json()['newClient']['_id']}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.948515" elapsed="0.003000"/>
+<status status="PASS" start="2024-10-14T10:30:13.603943" elapsed="0.005000"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.951515" level="INFO">66fc2f34b8d32c9e73da60b0</msg>
+<msg time="2024-10-14T10:30:13.609943" level="INFO">670d1ce2b8d32c9e73fa0471</msg>
 <arg>${ID_CLIENTE}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.951515" elapsed="0.000000"/>
+<status status="PASS" start="2024-10-14T10:30:13.608943" elapsed="0.001000"/>
 </kw>
 <kw name="Set Test Variable" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.953516" level="INFO">${RESPONSE_CLIENT} = {'msg': 'Cliente criado com sucesso.', 'newClient': {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'curre...</msg>
+<msg time="2024-10-14T10:30:13.611943" level="INFO">${RESPONSE_CLIENT} = {'msg': 'Cliente criado com sucesso.', 'newClient': {'fullName': 'JXjkxKomE FoItlHReq', 'birthDate': '09491520', 'mail': 'XjkxKomEoItlHReq57457941424739@hotmail.com', 'phone': '57457941424739', 'curre...</msg>
 <arg>${RESPONSE_CLIENT}</arg>
 <arg>${response_client.json()}</arg>
 <doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.952515" elapsed="0.001001"/>
+<status status="PASS" start="2024-10-14T10:30:13.609943" elapsed="0.003000"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:49.635223" elapsed="0.318293"/>
+<status status="PASS" start="2024-10-14T10:30:13.337943" elapsed="0.276000"/>
 </kw>
-<kw name="Validar cliente com sucesso" owner="kw_register_client">
+<status status="PASS" start="2024-10-14T10:30:11.078341" elapsed="2.535602"/>
+</kw>
+<kw name="Realizar a atualizacao do cadastro do cliente" owner="kw_update_client">
+<kw name="Country" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.616943" level="INFO">${COUNTRY} = Malávi</msg>
+<var>${COUNTRY}</var>
+<status status="PASS" start="2024-10-14T10:30:13.616943" elapsed="0.001000"/>
+</kw>
+<kw name="Postcode" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.617943" level="INFO">${ZIPCODE} = 20585285</msg>
+<var>${ZIPCODE}</var>
+<doc>Randomly returns a postcode.
+:param formatted: True to allow formatted postcodes, else False (default True)
+:example formatted: '41224-212' '83992-291' '12324322'
+:example raw: '43920231' '34239530'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.617943" elapsed="0.000000"/>
+</kw>
+<kw name="City" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.618943" level="INFO">${CITY} = da Rosa de Goiás</msg>
+<var>${CITY}</var>
+<doc>:example: 'Sashabury'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.618943" elapsed="0.000000"/>
+</kw>
+<kw name="State Abbr" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.619943" level="INFO">${STATE} = ES</msg>
+<var>${STATE}</var>
+<status status="PASS" start="2024-10-14T10:30:13.619943" elapsed="0.000000"/>
+</kw>
+<kw name="Street Suffix" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.620943" level="INFO">${DISTRICT} = Street</msg>
+<var>${DISTRICT}</var>
+<doc>:example: 'Avenue'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.620943" elapsed="0.000000"/>
+</kw>
+<kw name="Street Name" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.621943" level="INFO">${STREET} = Praia Gomes</msg>
+<var>${STREET}</var>
+<doc>:example: 'Crist Parks'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.620943" elapsed="0.001000"/>
+</kw>
+<kw name="Building Number" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.621943" level="INFO">${NUMBER} = 34</msg>
+<var>${NUMBER}</var>
+<doc>:example: '791'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.621943" elapsed="0.000000"/>
+</kw>
+<kw name="Port Number" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.622942" level="INFO">${COMPLEMENT} = 64578</msg>
+<var>${COMPLEMENT}</var>
+<doc>Returns a network port number
+https://tools.ietf.org/html/rfc6335</doc>
+<status status="PASS" start="2024-10-14T10:30:13.622942" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.625943" level="INFO">${body_update_address_client} = {'country': 'Malávi', 'zipCode': '20585285', 'city': 'da Rosa de Goiás', 'state': 'ES', 'district': 'Street', 'street': 'Praia Gomes', 'number': '34', 'complement': 64578}</msg>
+<var>${body_update_address_client}</var>
+<arg>country=${COUNTRY}</arg>
+<arg>zipCode=${ZIPCODE}</arg>
+<arg>city=${CITY}</arg>
+<arg>state=${STATE}</arg>
+<arg>district=${DISTRICT}</arg>
+<arg>street=${STREET}</arg>
+<arg>number=${NUMBER}</arg>
+<arg>complement=${COMPLEMENT}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.623943" elapsed="0.002000"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.626942" level="INFO">${RG} = 645147520</msg>
+<var>${RG}</var>
+<arg>9</arg>
+<arg>numbers_only=True</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2024-10-14T10:30:13.625943" elapsed="0.000999"/>
+</kw>
+<kw name="Random Number" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.627943" level="INFO">${CPF} = 50142589353</msg>
+<var>${CPF}</var>
+<arg>11</arg>
+<arg>numbers_only=True</arg>
+<doc>Generate a random integer according to the following rules:</doc>
+<status status="PASS" start="2024-10-14T10:30:13.626942" elapsed="0.001001"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.628942" level="INFO">${body_update_document_client} = {'rg': 645147520, 'cpf': 50142589353}</msg>
+<var>${body_update_document_client}</var>
+<arg>rg=${RG}</arg>
+<arg>cpf=${CPF}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.627943" elapsed="0.000999"/>
+</kw>
+<kw name="Name" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.629943" level="INFO">${FULLNAME} = Lara da Luz</msg>
+<var>${FULLNAME}</var>
+<doc>:example: 'John Doe'</doc>
+<status status="PASS" start="2024-10-14T10:30:13.629943" elapsed="0.000000"/>
+</kw>
+<kw name="Date Of Birth" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.630944" level="INFO">${BIRTHDATE} = 2005-12-16</msg>
+<var>${BIRTHDATE}</var>
+<doc>Generate a random date of birth represented as a Date object,
+constrained by optional miminimum_age and maximum_age
+parameters.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.630944" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.631943" level="INFO">${FORMATTED_BIRTHDATE} = 2005-12-16</msg>
+<var>${FORMATTED_BIRTHDATE}</var>
+<arg>${BIRTHDATE}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.631943" elapsed="0.000000"/>
+</kw>
+<kw name="Email" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.632943" level="INFO">${MAIL} = guerrabarbara@example.net</msg>
+<var>${MAIL}</var>
+<status status="PASS" start="2024-10-14T10:30:13.632943" elapsed="0.000000"/>
+</kw>
+<kw name="Phone Number" owner="FakerLibrary">
+<msg time="2024-10-14T10:30:13.633943" level="INFO">${PHONE} = +55 (011) 3708 7247</msg>
+<var>${PHONE}</var>
+<status status="PASS" start="2024-10-14T10:30:13.633943" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.636944" level="INFO">${body_update_client} = {'fullName': 'Lara da Luz', 'birthDate': '2005-12-16', 'mail': 'guerrabarbara@example.net', 'phone': '+55 (011) 3708 7247', 'currentRole': 'ADMIN', 'documents': {'rg': 645147520, 'cpf': 50142589353}, ...</msg>
+<var>${body_update_client}</var>
+<arg>fullName=${FULLNAME}</arg>
+<arg>birthDate=${FORMATTED_BIRTHDATE}</arg>
+<arg>mail=${MAIL}</arg>
+<arg>phone=${PHONE}</arg>
+<arg>currentRole=ADMIN</arg>
+<arg>documents=${body_update_document_client}</arg>
+<arg>address=${body_update_address_client}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.635944" elapsed="0.001000"/>
+</kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-10-01T14:19:49.955538" level="INFO">{'msg': 'Cliente criado com sucesso.', 'newClient': {'fullName': 'JOSBpFLly FMkRgLpOo', 'birthDate': '95161904', 'mail': 'OSBpFLlyMkRgLpOo79593064534849@hotmail.com', 'phone': '79593064534849', 'currentRole': 'ADMIN', 'documents': [{'cpf': '29979017347', 'rg': '7157211', '_id': '66fc2f34b8d32c9e73da60b1'}], 'address': [{'country': 'OSBpFLly', 'zipCode': '95161904', 'city': 'OSBpFLly', 'state': 'ML', 'district': 'JOSBpFLly FMkRgLpOo', 'street': 'JOSBpFLly FMkRgLpOo', 'number': '95161904', 'complement': 'Be5RnQCE', '_id': '66fc2f34b8d32c9e73da60b2'}], 'audit': [{'registrationDate': 'terça-feira, 01/10/2024, 14:19:48 BRT', 'registeredBy': {'userId': '66fc2f33b8d32c9e73da60a4', 'userLogin': 'da-cruzmateus@example.com'}, 'registrationNumber': 'QaCoders-0001', '_id': '66fc2f34b8d32c9e73da60b3'}], '_id': '66fc2f34b8d32c9e73da60b0', '__v': 0}}</msg>
-<arg>${RESPONSE_CLIENT}</arg>
-<arg>console=True</arg>
+<msg time="2024-10-14T10:30:13.637943" level="INFO">{'fullName': 'Lara da Luz', 'birthDate': '2005-12-16', 'mail': 'guerrabarbara@example.net', 'phone': '+55 (011) 3708 7247', 'currentRole': 'ADMIN', 'documents': {'rg': 645147520, 'cpf': 50142589353}, 'address': {'country': 'Malávi', 'zipCode': '20585285', 'city': 'da Rosa de Goiás', 'state': 'ES', 'district': 'Street', 'street': 'Praia Gomes', 'number': '34', 'complement': 64578}}</msg>
+<arg>${body_update_client}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.955538" elapsed="0.002025"/>
+<status status="PASS" start="2024-10-14T10:30:13.637943" elapsed="0.000000"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['msg']}</arg>
-<arg>Cliente criado com sucesso.</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.957563" elapsed="0.001021"/>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2024-10-14T10:30:13.808943" level="INFO">PUT Request : url=https://develop.qacoders.dev.br/api/client/670d1ce2b8d32c9e73fa0471 
+ path_url=/api/client/670d1ce2b8d32c9e73fa0471 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzBkMWNlMWI4ZDMyYzllNzNmYTA0NjUiLCJmdWxsTmFtZSI6IkhlbGxlbmEgQ8OibWFyYSIsIm1haWwiOiJzb2ZpYW1lbG9AZXhhbXBsZS5vcmciLCJwYXNzd29yZCI6IiQyYiQxMCROblR0YklGUURtYUNsSTRRVTM5Mm4uazBhRWc3UUh2NjNHLmlOekkvbDE0aE1pclJhRGRGUyIsImFjY2Vzc1Byb2ZpbGUiOiJBRE1JTiIsImNwZiI6IjUyMTY4NDM5MDYwIiwic3RhdHVzIjp0cnVlLCJhdWRpdCI6W3sicmVnaXN0ZXJlZEJ5Ijp7InVzZXJJZCI6IjY2ZGI1ZTllYjYyMjQ4NDM5MDNjNDRjYiIsInVzZXJMb2dpbiI6InN5c2FkbWluQHFhY29kZXJzLmNvbSJ9LCJyZWdpc3RyYXRpb25EYXRlIjoic2VndW5kYS1mZWlyYSwgMTQvMTAvMjAyNCwgMTA6MzA6MDkgQlJUIiwicmVnaXN0cmF0aW9uTnVtYmVyIjoiUWFDb2RlcnMtNzY0IiwiX2lkIjoiNjcwZDFjZTFiOGQzMmM5ZTczZmEwNDY2In1dLCJfX3YiOjAsImlhdCI6MTcyODkxMjYwOSwiZXhwIjoxNzI4OTk5MDA5fQ.rj1Eljtszl89KydXLR693k8mAVn-1GpW8etSYyONtbI', 'Content-Length': '393'} 
+ body=b'{"fullName": "Lara da Luz", "birthDate": "2005-12-16", "mail": "guerrabarbara@example.net", "phone": "+55 (011) 3708 7247", "currentRole": "ADMIN", "documents": {"rg": 645147520, "cpf": 50142589353}, "address": {"country": "Mal\\u00e1vi", "zipCode": "20585285", "city": "da Rosa de Goi\\u00e1s", "state": "ES", "district": "Street", "street": "Praia Gomes", "number": "34", "complement": 64578}}' 
+ </msg>
+<msg time="2024-10-14T10:30:13.808943" level="INFO">PUT Response : url=https://develop.qacoders.dev.br/api/client/670d1ce2b8d32c9e73fa0471 
+ status=200, reason=OK 
+ headers={'Server': 'nginx/1.18.0 (Ubuntu)', 'Date': 'Mon, 14 Oct 2024 13:30:10 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': 'https://automacao.qacoders.dev.br', 'Vary': 'Origin', 'ETag': 'W/"370-OPr7fdCbzLTiE+fp9GEVe1GNNuU"', 'Content-Encoding': 'gzip'} 
+ body={"_id":"670d1ce2b8d32c9e73fa0471","fullName":"Lara da Luz","birthDate":"2005-12-16","mail":"guerrabarbara@example.net","phone":"+55 (011) 3708 7247","currentRole":"ADMIN","documents":[{"cpf":"50142589353","rg":"645147520","_id":"670d1ce2b8d32c9e73fa0480"}],"address":[{"country":"Malávi","zipCode":"20585285","city":"da Rosa de Goiás","state":"ES","district":"Street","street":"Praia Gomes","number":"34","complement":"64578","_id":"670d1ce2b8d32c9e73fa0481"}],"audit":[{"registeredBy":{"userId":"670d1ce1b8d32c9e73fa0465","userLogin":"sofiamelo@example.org"},"registrationDate":"segunda-feira, 14/10/2024, 10:30:10 BRT","registrationNumber":"QaCoders-00024","_id":"670d1ce2b8d32c9e73fa0474"},{"updatedBy":{"userId":"670d1ce1b8d32c9e73fa0465","userLogin":"sofiamelo@example.org"},"updateDate":"segunda-feira, 14/10/2024, 10:30:10 BRT","_id":"670d1ce2b8d32c9e73fa0483"}],"__v":0} 
+ </msg>
+<msg time="2024-10-14T10:30:13.808943" level="INFO">${response_update_client} = &lt;Response [200]&gt;</msg>
+<var>${response_update_client}</var>
+<arg>auth</arg>
+<arg>${ENDPOINT_CLIENT}${ID_CLIENTE}</arg>
+<arg>json=${body_update_client}</arg>
+<arg>headers=${HEADERS_TOKEN}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.638944" elapsed="0.169999"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['newClient']['mail']}</arg>
-<arg>${EMAIL_CLIENTE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.958584" elapsed="0.001980"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.809944" level="INFO">&lt;Response [200]&gt;</msg>
+<arg>${response_update_client}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.809944" elapsed="0.000000"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['newClient']['phone']}</arg>
-<arg>${TELEFONE_CLIENTE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.961564" elapsed="0.001000"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.810944" elapsed="0.000000"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['newClient']['documents'][0]['rg']}</arg>
-<arg>${RG_CLIENTE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.963588" elapsed="0.001975"/>
+<kw name="Set Test Variable" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.817943" level="INFO">${UPDATE_CLIENTE} = {'_id': '670d1ce2b8d32c9e73fa0471', 'fullName': 'Lara da Luz', 'birthDate': '2005-12-16', 'mail': 'guerrabarbara@example.net', 'phone': '+55 (011) 3708 7247', 'currentRole': 'ADMIN', 'documents': [{'c...</msg>
+<arg>${UPDATE_CLIENTE}</arg>
+<arg>${response_update_client.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.811944" elapsed="0.006999"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['newClient']['documents'][0]['cpf']}</arg>
-<arg>${CPF_CLIENTE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.965563" elapsed="0.002000"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-10-14T10:30:13.819943" level="INFO">{'_id': '670d1ce2b8d32c9e73fa0471', 'fullName': 'Lara da Luz', 'birthDate': '2005-12-16', 'mail': 'guerrabarbara@example.net', 'phone': '+55 (011) 3708 7247', 'currentRole': 'ADMIN', 'documents': [{'cpf': '50142589353', 'rg': '645147520', '_id': '670d1ce2b8d32c9e73fa0480'}], 'address': [{'country': 'Malávi', 'zipCode': '20585285', 'city': 'da Rosa de Goiás', 'state': 'ES', 'district': 'Street', 'street': 'Praia Gomes', 'number': '34', 'complement': '64578', '_id': '670d1ce2b8d32c9e73fa0481'}], 'audit': [{'registeredBy': {'userId': '670d1ce1b8d32c9e73fa0465', 'userLogin': 'sofiamelo@example.org'}, 'registrationDate': 'segunda-feira, 14/10/2024, 10:30:10 BRT', 'registrationNumber': 'QaCoders-00024', '_id': '670d1ce2b8d32c9e73fa0474'}, {'updatedBy': {'userId': '670d1ce1b8d32c9e73fa0465', 'userLogin': 'sofiamelo@example.org'}, 'updateDate': 'segunda-feira, 14/10/2024, 10:30:10 BRT', '_id': '670d1ce2b8d32c9e73fa0483'}], '__v': 0}</msg>
+<arg>${UPDATE_CLIENTE}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-10-14T10:30:13.818943" elapsed="0.001000"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${RESPONSE_CLIENT['newClient']['_id']}</arg>
-<arg>${ID_CLIENTE}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-01T14:19:49.967563" elapsed="0.002000"/>
+<status status="PASS" start="2024-10-14T10:30:13.615943" elapsed="0.204000"/>
 </kw>
-<status status="PASS" start="2024-10-01T14:19:49.954517" elapsed="0.015046"/>
-</kw>
-<tag>CADASTRO_CLIENTE</tag>
-<status status="PASS" start="2024-10-01T14:19:47.055128" elapsed="2.917437"/>
+<tag>ATUALIZA_CLIENTE</tag>
+<status status="PASS" start="2024-10-14T10:30:11.008828" elapsed="2.828116"/>
 </test>
-<status status="PASS" start="2024-10-01T14:19:42.148133" elapsed="7.832431"/>
+<status status="PASS" start="2024-10-14T10:30:02.533250" elapsed="11.306694"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">CADASTRO_CLIENTE</stat>
+<stat pass="1" fail="0" skip="0">ATUALIZA_CLIENTE</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Develop">Develop</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-10-01T14:19:46.741127" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_register_user.robot' on line 43: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2024-10-01T14:19:46.902129" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamic.robot' on line 26: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2024-10-01T14:19:46.910127" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamica_company.robot' on line 46: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2024-10-01T14:19:46.941128" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamic_client.robot' on line 55: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
-<msg time="2024-10-01T14:19:47.024128" level="ERROR">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\config\main.robot' on line 35: Processing variable file '../date/variables/return_variable.robot' failed: Importing variable file '../date/variables/return_variable.robot' failed: ModuleNotFoundError: No module named '.'
+<msg time="2024-10-14T10:30:10.105256" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_register_user.robot' on line 43: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-10-14T10:30:10.605798" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamic.robot' on line 26: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-10-14T10:30:10.735798" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamica_company.robot' on line 46: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-10-14T10:30:10.766798" level="WARN">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\date\keywords\kw_dinamic_client.robot' on line 55: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-10-14T10:30:10.875828" level="ERROR">Error in file 'C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\config\main.robot' on line 35: Processing variable file '../date/variables/return_variable.robot' failed: Importing variable file '../date/variables/return_variable.robot' failed: ModuleNotFoundError: No module named '.'
 Traceback (most recent call last):
   None
 PYTHONPATH:
-  C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\venv\Scripts\robot.exe
+  C:\Users\julia\AppData\Local\Programs\Python\Python312\Scripts\robot.exe
   C:\Users\julia\AppData\Local\Programs\Python\Python312\python312.zip
   C:\Users\julia\AppData\Local\Programs\Python\Python312\DLLs
   C:\Users\julia\AppData\Local\Programs\Python\Python312\Lib
   C:\Users\julia\AppData\Local\Programs\Python\Python312
-  C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\venv
-  C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\venv\Lib\site-packages
-  C:\Users\julia\OneDrive\Desktop\ROBOT_TECHLEAD\ROBOT\ROBOT_API\venv\Lib\site-packages\setuptools\_vendor</msg>
+  C:\Users\julia\AppData\Local\Programs\Python\Python312\Lib\site-packages
+  C:\Users\julia\AppData\Local\Programs\Python\Python312\Lib\site-packages\setuptools\_vendor</msg>
 </errors>
 </robot>

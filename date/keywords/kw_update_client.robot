@@ -1,5 +1,6 @@
 *** Settings ***
 Resource        ../../config/main.robot
+Library        FakerLibrary    locale=pt_BR   
 
 
 *** Keywords ***

@@ -27,7 +27,7 @@ jobs:
           pip install PyYAML
           pip install robotframework-faker
           pip install robotframework-jsonlibrary
-
+          
       - name: Run Robot Framework Tests
         run: |
           robot -d results/ tests/fetuares/
