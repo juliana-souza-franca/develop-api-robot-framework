@@ -11,39 +11,42 @@ jobs:
   test:
     runs-on: 
       ubuntu-latest
- 
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
- 
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
- 
+
       - name: Install dependencies
         run: |
+          pip install setuptools
           pip install robotframework
           pip install robotframework-requests
-          pip install robotframework-faker  # Corrigido para FakerLibrary
+          pip install faker
           pip install robotframework-jsonlibrary
           pip install pyyaml
- 
+
       - name: Run Robot Framework tests
         run: |
-          robot --outputdir results/ tests/fetuares/
+          mkdir -p results
+          robot --outputdir results tests/features/
 
       - name: Test Report
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
-          path: results/**
+          path: results/
 
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
     if: always()
-    needs: test
+    needs:
+      - test
     permissions:
       contents: read
       pages: write
@@ -54,12 +57,12 @@ jobs:
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v5
- 
+
       - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
           name: robot-framework-report
-          path: ./results/  # Corrigido o caminho
+          path: ./results/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
