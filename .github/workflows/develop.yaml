@@ -40,7 +40,7 @@ jobs:
         with:
           name: robot-framework-report
           path: results/
-
+          
   deploy:
     name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
