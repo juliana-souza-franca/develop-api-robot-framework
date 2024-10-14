@@ -32,7 +32,7 @@ jobs:
       
       - name: List files in tests/features
         run: |
-          ls -l tests/features
+          ls -l tests/features  
 
       - name: Run Robot Framework tests
         run: |
