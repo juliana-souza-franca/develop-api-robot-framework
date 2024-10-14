@@ -30,6 +30,10 @@ jobs:
           pip install robotframework-jsonlibrary
           pip install pyyaml
 
+      - name: List all files in repository
+        run: |
+          ls -R
+
       - name: Run Robot Framework tests
         run: |
           robot --outputdir results tests/fetuares/
