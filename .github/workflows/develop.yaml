@@ -30,14 +30,17 @@ jobs:
 
       - name: Run Robot Framework Tests
         run: |
-          robot -d results/ tests/fetuares/
+          robot --outputdir results/ tests/
 
       - name: Upload Test Results
-        if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: robot-framework-report
+          name: robot-framework-results
           path: results/**
+
+  relatorio:
+    runs-on: ubuntu-latest
+    needs: teste
 
     steps:
       - name: Checkout Repository
@@ -52,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
-          path: results/**
+          path: results/*
 
   deploy:
     runs-on: ubuntu-latest
