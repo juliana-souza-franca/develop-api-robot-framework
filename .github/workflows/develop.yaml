@@ -1,0 +1,87 @@
+name: Develop
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  teste:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Dependencies
+        run: |
+          pip install robotframework
+          pip install robotframework-requests
+          pip install PyYAML
+          pip install robotframework-faker
+          pip install robotframework-jsonlibrar
+
+      - name: Run Robot Framework Tests
+        run: |
+          robot --outputdir results/ tests/
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-framework-results
+          path: results/**
+
+  relatorio:
+    runs-on: ubuntu-latest
+    needs: teste
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Download Test Results
+        uses: actions/download-artifact@v4
+        with:
+          name: robot-framework-results
+
+      - name: Generate and Upload Test Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: robot-framework-report
+          path: results/**
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: relatorio
+    if: always()
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: https://juliana-souza-franca.github.io/develop-api-robot-framework/report.html
+
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Download Report Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: robot-framework-report
+
+      - name: Upload Report to GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./results
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4

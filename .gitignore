@@ -1,5 +1,5 @@
-.vscode
-logs
-venv
-.html
-.xml 
+.vscode/
+logs/
+venv/
+*.htm
+*.xml
