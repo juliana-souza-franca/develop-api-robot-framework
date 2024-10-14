@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot --outputdir results tests/features/
+          robot --outputdir results tests/fetuares/
 
       - name: Test Report
         uses: actions/upload-artifact@v4
