@@ -1,87 +1,80 @@
 name: Develop
-
-on:
+ 
+on: 
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+ 
+  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
-  teste:
-    runs-on: ubuntu-latest
-
+  test:
+    runs-on: 
+      ubuntu-latest
+ 
     steps:
       - name: Checkout Repository
+        # run: echo Fazendo clone do repositorio na maquina virtual
         uses: actions/checkout@v4
-
-      - name: Setup Python
+ 
+      - name: Set up Python
+        # run: echo Instalação da versão 3.12 do Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Install Dependencies
+ 
+      - name: Install dependencies
+        # run: echo Instalação das depedências do Projeto
         run: |
           pip install robotframework
           pip install robotframework-requests
-          pip install robotframework-faker
+          pip install faker
           pip install robotframework-jsonlibrary
           pip install pyyaml
-
-      - name: Run Robot Framework Tests
+ 
+      - name: Run Robot Framework tests
+        # run: echo Executando os testes de API do Robot
         run: |
           robot --outputdir results/ tests/fetuares/
 
-      - name: Upload Test Results
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-framework-results
-          path: results/**
-
-  relatorio:
-    runs-on: ubuntu-latest
-    needs: teste
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Download Test Results
-        uses: actions/download-artifact@v4
-        with:
-          name: robot-framework-results
-
-      - name: Generate and Upload Test Report
+      - name: Test Report
+        # run: echo Salvando o Report dos Testes
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
           path: results/**
 
   deploy:
+    name: Deploy GitHub Pages 🌐
     runs-on: ubuntu-latest
-    needs: relatorio
     if: always()
+    needs:
+      - test
     permissions:
-      contents: write
+      contents: read
       pages: write
       id-token: write
     environment:
       name: github-pages
-      url: https://juliana-souza-franca.github.io/develop-api-robot-framework/report.html
-
+      url: https://juliana-souza-franca.github.io/suits-academy-api-robot/report.html
     steps:
       - name: Setup Pages
         uses: actions/configure-pages@v5
-
-      - name: Download Report Artifacts
+ 
+      - name: Download Artifacts
         uses: actions/download-artifact@v4
         with:
           name: robot-framework-report
-
-      - name: Upload Report to GitHub Pages
+          path: results/
+ 
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./results
-
-      - name: Deploy to GitHub Pages
+          path: ./
+ 
+      - name: Deploy to Github Pages
+        id: deployment
         uses: actions/deploy-pages@v4
