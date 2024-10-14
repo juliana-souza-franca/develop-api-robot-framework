@@ -39,9 +39,7 @@ jobs:
           name: robot-framework-report
           path: results/**
 
-  relatorio:
-    runs-on: ubuntu-latest
-    needs: teste
+ 
 
     steps:
       - name: Checkout Repository
