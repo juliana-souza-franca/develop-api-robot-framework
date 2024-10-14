@@ -39,8 +39,6 @@ jobs:
           name: robot-framework-report
           path: results/**
 
- 
-
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
