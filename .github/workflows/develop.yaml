@@ -29,6 +29,9 @@ jobs:
            pip install robotframework-faker  
            pip install robotframework-jsonlibrary
            pip install pyyaml
+           pip install --upgrade pip
+           pip install setuptools  
+           pip install -r requirements.txt
           
 
       - name: List all files in repository
