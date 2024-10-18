@@ -1,3 +1,4 @@
+---
 name: Develop
 
 on: 
@@ -23,12 +24,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install setuptools
           pip install robotframework
           pip install robotframework-requests
-          pip install faker
+          pip install robotframework-faker  # Nome correto da biblioteca Faker
           pip install robotframework-jsonlibrary
           pip install pyyaml
+          pip install robotframework-operatingsystem
+          pip install robotframework-collections
+          pip install robotframework-string
 
       - name: List all files in repository
         run: |
@@ -36,9 +39,9 @@ jobs:
 
       - name: Run Robot Framework tests
         run: |
-          robot --outputdir results tests/fetuares/
+          robot --outputdir results tests/features/
 
-      - name: Test Report
+      - name: Upload Test Results
         uses: actions/upload-artifact@v4
         with:
           name: robot-framework-report
