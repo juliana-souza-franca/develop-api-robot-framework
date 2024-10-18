@@ -26,13 +26,12 @@ jobs:
         run: |
           pip install robotframework
           pip install robotframework-requests
-          pip install robotframework-faker  # Nome correto da biblioteca Faker
+          pip install robotframework-faker  
           pip install robotframework-jsonlibrary
           pip install pyyaml
-          pip install robotframework-operatingsystem
           pip install robotframework-collections
           pip install robotframework-string
-
+          
       - name: List all files in repository
         run: |
           ls -R
