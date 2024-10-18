@@ -24,14 +24,13 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install robotframework
-          pip install robotframework-requests
-          pip install robotframework-faker  
-          pip install robotframework-jsonlibrary
-          pip install pyyaml
-          pip install robotframework-collections
-          pip install robotframework-string
-          
+           pip install robotframework
+           pip install robotframework-requests
+           pip install robotframework-faker  
+           pip install robotframework-jsonlibrary
+           pip install pyyaml
+           pip install robotframework-string
+
       - name: List all files in repository
         run: |
           ls -R
